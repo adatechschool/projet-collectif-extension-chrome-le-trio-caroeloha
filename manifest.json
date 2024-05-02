@@ -3,8 +3,13 @@
     "name": "Mimi's Mode",
     "description": "Traduction to minion's language",
     "version": "1.0",
-    "permissions":  ["webRequest", "tabs"],
-    "host_permissions": ["<all_urls>"],
+    "permissions": [
+        "activeTab"
+      ],
+      "host_permissions": ["<all_urls>"],
+      "background": {
+        "service_worker": "background.js"
+      },
     "content_scripts": [
 		{
 			"matches": ["<all_urls>"],
