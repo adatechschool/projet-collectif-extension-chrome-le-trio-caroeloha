@@ -1,11 +1,8 @@
 
 console.log("Hello Extension");
 
-<<<<<<< HEAD
-
-=======
 // Get mouse selection data
->>>>>>> 193884ba111ea94b593f996e2203882b7fa554f8
+
 function getUserSelection() {
   if (window.getSelection) {
     const selection = window.getSelection().toString();
