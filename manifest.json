@@ -1,14 +1,12 @@
 {
     "manifest_version": 3,
-    "name": "Morse's Mode",
-    "description": "Traduction to morse's language",
+    "name": "Morse Mode",
+    "description": "Traduction to morse language",
     "version": "1.0",
     "permissions": [
         "activeTab"
         
       ],
-      "host_permissions": ["https://developer.mozilla.org/"],
-    
     "content_scripts": [
 		{
 			"matches": ["<all_urls>"],
