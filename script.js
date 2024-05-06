@@ -2,9 +2,6 @@
 console.log("Hello Extension");
 
 
-
-
-
 function getUserSelection() {
   if (window.getSelection) {
     const selection = window.getSelection().toString();
