@@ -20,6 +20,7 @@ function getUserSelection() {
     (async () => {
       const response = await chrome.runtime.sendMessage({ type: 'text', payload })
       console.log(response)
+      insertHtmlAfterSelection(window.getSelection(), response);
     })();
   }
 
@@ -49,7 +50,7 @@ function insertHtmlAfterSelection(selectionObject, translation) {
       }
       range.insertNode(frag);
       selectionObject.empty();
-      console.log(translation)
+      
   }
 }
-insertHtmlAfterSelection(window.getSelection(), translation);
+
