@@ -9,20 +9,10 @@ function getUserSelection() {
   if (window.getSelection) {
     const selection = window.getSelection().toString();
     console.log("selection", selection);
+    const translation = encode(selection)
 
-    const payload = {
-      text: selection.trim(),
-      src: "English",
-      dest: "minion",
-      detected: "English",
-
-    };
-    (async () => {
-      const response = await chrome.runtime.sendMessage({ type: 'text', payload })
-      console.log(response)
-    })();
+    insertHtmlAfterSelection (window.getSelection(), translation);
   }
-
 }
 
 document.addEventListener("mouseup", getUserSelection);
@@ -40,8 +30,9 @@ function insertHtmlAfterSelection(selectionObject, translation) {
       // Range.createContextualFragment() would be useful here but is
       // non-standard and not supported in all browsers (IE9, for one)
       const el = document.createElement("div");
-      el.innerHTML = ` [FR: ${translation} ] `;
+      el.innerHTML = ` [Morse: ${translation} ] `;
       let frag = document.createDocumentFragment();
+      console.log(el)
       let node;
       let lastNode;
       while ((node = el.firstChild)) {
@@ -49,10 +40,10 @@ function insertHtmlAfterSelection(selectionObject, translation) {
       }
       range.insertNode(frag);
       selectionObject.empty();
-      console.log(translation)
+   
   }
 }
-insertHtmlAfterSelection(window.getSelection(), translation);
+
 
 
 
@@ -96,7 +87,9 @@ function encode(phrase) {
       }
   }
   // Retirer les espaces à la fin et au début
+  console.log(morseCode)
   return morseCode.trim();
+
 }
 
 // function decode(phrase2) {
