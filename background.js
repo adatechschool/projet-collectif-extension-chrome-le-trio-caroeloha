@@ -22,10 +22,6 @@
                     }else{
                     
                     sendResponse(res.contents.translated);}
-                    //console.log("res", res);
-                    if (res.list && res.list.length > 0) {
-
-                    }
                 });
 
             return true
