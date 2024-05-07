@@ -30,7 +30,7 @@ function insertHtmlAfterSelection(selectionObject, translation) {
       // Range.createContextualFragment() would be useful here but is
       // non-standard and not supported in all browsers (IE9, for one)
       const el = document.createElement("div");
-      el.innerHTML = ` [Morse: ${translation} ] `;
+      el.innerHTML = `<span style="color: #CC6633;">[Morse: ${translation} ]</span>`;
       let frag = document.createDocumentFragment();
       console.log(el)
       let node;
@@ -66,7 +66,7 @@ function encode(phrase) {
       '&': '.-...', ':': '---...', ';': '-.-.-.', '=': '-...-', '+': '.-.-.', '-': '-....-', '_': '..--.-', '"': '.-..-.',
       '$': '...-..-', '@': '.--.-.',
       'À': '.--.-', 'Ä': '.-.-', 'Æ': '.-.-', 'Ç': '-.-..', 'É': '..-..', 'È': '.-..-', 'Ö': '---.', 'Ü': '..--',
-      'ß': '...--..', 'Ñ': '--.--', 'Ź': '--..-', ' ': '/'
+      'ß': '...--..', 'Ñ': '--.--', 'Ź': '--..-', ' ': ' '
   };
 
   // Convertir la phrase en majuscules
