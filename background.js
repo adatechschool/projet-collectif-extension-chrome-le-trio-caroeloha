@@ -24,7 +24,7 @@
                     sendResponse(res.contents.translated);}
                     //console.log("res", res);
                     if (res.list && res.list.length > 0) {
-                        const translation = res.list[0].destWord;
+
                     }
                 });
 
