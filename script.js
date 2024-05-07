@@ -41,6 +41,7 @@ function insertHtmlAfterSelection(selectionObject, translation) {
       // Range.createContextualFragment() would be useful here but is
       // non-standard and not supported in all browsers (IE9, for one)
       const el = document.createElement("div");
+      el.style.BackgroundColor="red"
       el.innerHTML = ` [Minion: ${translation} ] `;
       let frag = document.createDocumentFragment();
       let node;
