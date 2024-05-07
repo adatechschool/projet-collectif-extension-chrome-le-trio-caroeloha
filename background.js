@@ -17,9 +17,11 @@
 
                 .then(data => data.json())
                 .then(res => {
-
+                    if(res.error){
+                        sendResponse("banana Error")
+                    }else{
                     
-                    sendResponse(res.contents.translated);
+                    sendResponse(res.contents.translated);}
                     //console.log("res", res);
                     if (res.list && res.list.length > 0) {
                         

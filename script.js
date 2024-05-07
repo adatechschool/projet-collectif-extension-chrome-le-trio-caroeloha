@@ -6,8 +6,9 @@ console.log("Hello Extension");
 
 
 function getUserSelection() {
-  if (window.getSelection) {
-    const selection = window.getSelection().toString();
+
+  const selection = window.getSelection().toString();
+  if (selection) {
     console.log("selection", selection);
 
     const payload = {
@@ -41,8 +42,8 @@ function insertHtmlAfterSelection(selectionObject, translation) {
       // Range.createContextualFragment() would be useful here but is
       // non-standard and not supported in all browsers (IE9, for one)
       const el = document.createElement("div");
-      el.style.BackgroundColor="red"
-      el.innerHTML = ` [Minion: ${translation} ] `;
+      
+      el.innerHTML = `<span style="color:#8145B5";>[Minion: ${translation} ]</span>`;
       let frag = document.createDocumentFragment();
       let node;
       let lastNode;
