@@ -6,8 +6,8 @@ console.log("Hello Extension");
 
 
 function getUserSelection() {
-  if (window.getSelection) {
-    const selection = window.getSelection().toString();
+  const selection = window.getSelection().toString();
+  if (selection) {
     console.log("selection", selection);
     const translation = encode(selection)
 
